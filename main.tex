@@ -15,6 +15,8 @@
 \usepackage{comment}                                            % allows for multi line comments
 \usepackage{todonotes}                                          % Adds the todo package, very useful for revision
 \usepackage[toc]{glossaries}                                    % Glossary
+%\usepackage[style=superborder,toc]{glossaries}                 % Adds a border around glossary
+
 
 
 % Math packages
@@ -52,7 +54,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% Generate cover page  %%%%%%%%%%%%%%% 
+%%%%%%%%%%% Generate cover pages  %%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 
@@ -60,12 +62,11 @@
 
 \include{abstract}
 
-\newpage
-\ackname{Acknowledgement}
+\include{acknowledgements}
 
-\acmname{ACM Computing Classification System Classification}
+\include{ACM_CCS_Classification}
 
-%\include{ACM_CSS_Classification}
+
 
 
 
@@ -81,7 +82,7 @@
 \listofalgorithms                           % List of algorithms
 \addcontentsline{toc}{chapter}{\listalgorithmname}
 %\listofequations                           % List of equations
-%\printnoidxglossaries                       % List of Glossary entries
+\printnoidxglossaries                       % List of Glossary entries
 
 \pagenumbering{arabic}
 

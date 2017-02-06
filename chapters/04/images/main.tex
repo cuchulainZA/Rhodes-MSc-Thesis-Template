@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Experimental Setup}
+
+\label{chap:exp}
+
+\section{Random maths}
+An example equation: 
+
+\begin{equation}
+    \label{eq:OpinionTriangle}
+    \begin{aligned}
+        b+d+u=1, \{b,d,u\}\in[0,1]
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \label{eq:OpinionGeneral}
+    \begin{array}{l l}
+    w_p^{A} & =\{b_p^A,d_p^A,u_p^A\} \\
+    \text{where,}
+    \end{array}
+\end{equation}
+\begin{equation}
+    \label{eq:OpinionCalc}
+     w_A^B = \left\{
+    \begin{array}{l l}
+        b_A^B \dfrac{p}{p+n+u} & \quad \\
+        d_A^B \dfrac{n}{p+n+u} & \quad \text{, where } u_A^B \neq  0\\
+        u_A^B \dfrac{u}{p+n+u} &
+    \end{array} \right.
+\end{equation}
+
+An example algorithm: 
+\begin{algorithm}
+    \label{alg:Lorenz}
+	\centering{\fbox{\parbox[]{155mm}{
+		\begin{algorithmic}[1]
+    	\Require W[ ]- a sorted array of all wealth distributions
+    	\Function{LorenzCurve}{W[ ]}
+    	
+    	   \State $L[ ] $ \Comment{An empty set of equal length to W[ ]}
+    	    
+    	   \State $currentTotal \gets 0$
+            \For {$i\gets 1,W.length()$ }
+            
+                \State $currentTotal \gets currentTotal + W[i]$
+                
+                \State $L[i] \gets currentTotal$
+            \EndFor
+            
+            \Return $L[  ]$
+        \EndFunction
+    \end{algorithmic}
+	}}}
+	\caption{Pseudo code for calculating Lorenz Curve plot points}
+	%\label{alg:Lorenz}
+\end{algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+And here you can see an image of a rarely spotted special snowflake in Figure \ref{fig:snowflake}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=88mm]{chapters/03/images/snow_flake}
+    \caption{Special snowflake}
+    \label{fig:snowflake}
+\end{figure}
