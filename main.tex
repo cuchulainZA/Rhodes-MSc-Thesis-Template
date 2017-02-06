@@ -1,0 +1,109 @@
+\documentclass[11pt]{newrucsthesis}
+
+% preamble stuff here
+\usepackage{graphicx}                                           % need this for figures etc.
+\usepackage{url}                                                % to handle urls 
+%\usepackage{natbib}
+\usepackage{authordate1-4}                                      % for authordate ref style only
+\usepackage{float}												% customised float support
+\usepackage{fancyhdr}											% improved header and footer support
+\usepackage{makeidx}											% automatic index generation
+\usepackage{url}												% URL typesetting
+\usepackage{texnames}											% BIBTeX, SliTeX, AMSTeX, PiCTeX and TeXsis logos
+\usepackage{verbatim}											% multi-line comments
+\usepackage{ifpdf}												% selective setup for PDF compilation
+\usepackage{comment}                                            % allows for multi line comments
+\usepackage{todonotes}                                          % Adds the todo package, very useful for revision
+\usepackage[toc]{glossaries}                                    % Glossary
+
+
+% Math packages
+\usepackage{amssymb}											% American Mathematical Society symbols
+\usepackage{amsmath}											% American Mathematical Society environments
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Glossary section %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setacronymstyle{long-short}
+\include{glossary}
+\makenoidxglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Create references %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\bibname{References}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% PDF settings in pdfsettings.tex %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{pdfsettings}
+
+
+
+
+\title{Rhodes MSc Thesis Template}
+\author{Bob D. Builder}
+\date{January 2017}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Generate cover page  %%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+\pagenumbering{roman}
+
+\include{abstract}
+
+\newpage
+\ackname{Acknowledgement}
+
+\acmname{ACM Computing Classification System Classification}
+
+%\include{ACM_CSS_Classification}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% All lists declarations %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\printnoidxglossaries                       % List of Glossary entries
+\tableofcontents                            % List all Chapters and Sections
+\listoffigures                              % List all Figures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoftables                               % List of Table
+\addcontentsline{toc}{chapter}{\listtablename}
+\listofalgorithms                           % List of algorithms
+\addcontentsline{toc}{chapter}{\listalgorithmname}
+%\listofequations                           % List of equations
+%\printnoidxglossaries                       % List of Glossary entries
+
+\pagenumbering{arabic}
+
+ % Include all the chapters for thesis
+ % It might be useful to disable chapters with long compile times
+\include{chapters/01/main}
+\include{chapters/02/main}
+\include{chapters/03/main}
+\include{chapters/04/main}
+\include{chapters/05/main}
+\include{chapters/06/main}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Generate Reference list %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibliographystyle{acm}  
+%\bibliographystyle{rucsacm}   
+\bibliographystyle{ruauthordate}   % also uncomment the usepackage{authordate1-4} above
+\label{References}
+\bibliography{thesis}   	% load in the info produced from thesis.bib
+
+
+\end{document}

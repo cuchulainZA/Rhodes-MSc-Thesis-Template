@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    PDF Settings   %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifpdf
+
+% PDFLaTeX-specific packages
+
+\usepackage[
+	pdftex,															% hyperlinked references for PDF output
+	bookmarks=true,												% (option) build bookmarks
+	bookmarksnumbered=true										% (option) add section numbers to bookmarks
+]{hyperref}
+
+\usepackage{pdfpages}											% required for PDF watermarking
+\usepackage{epstopdf}											% automatic conversion of EPS images
+\usepackage[pdftex]{thumbpdf}									% thumbnail generation for PDF files
+\usepackage{pdflscape}											% required by thumbpdf
+\usepackage[all]{hypcap}										% correct PDF figure links to top of image
+
+\usepackage[printonlyused]{acronym}
+
+
+% setup options for hyperlinks
+
+\hypersetup{
+	pdfhighlight=/N,											% (option) no visual cue on clicking link
+	pdffitwindow=true,											% (option)
+	pdfstartview=Fit,											% (option) fit initial view to page
+	plainpages=false,											% (option) prevent hyperref page number changes
+	breaklinks=true,											% (option) allow link breaking across lines
+	colorlinks=true,											% (option) color link text only (no borders)
+	pageanchor=false,											% (option) turns off page referencing for title page
+	linkcolor=black,												% (option) internal link color
+	citecolor=black,												% (option) citation link color
+	filecolor=black,												% (option) file link color
+	menucolor=black,												% (option) Acrobat menu link color
+	pagecolor=black,												% (option) page link color
+	urlcolor=black,												% (option) URL link color
+}
+
+% PDF meta-data settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%        Fill in personal meta-data         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdftitle    = {},
+	pdfauthor   = {},
+	pdfsubject  = {},
+	pdfkeywords = {},
+}
+
+% force LaTeX-compliant spacing
+
+\pdfadjustspacing=1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       DVI/PostScript-Specific setup       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\else
+
+\usepackage{graphicx}											% EPS graphics
+
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    PDF Settings End  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
